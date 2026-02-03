@@ -1,0 +1,61 @@
+/**
+ * GH3 Hash Runs - Admin Styles
+ */
+
+.gh3-meta-box {
+    padding: 10px 0;
+}
+
+.gh3-field-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.gh3-field {
+    flex: 1;
+    min-width: 200px;
+}
+
+.gh3-field-full {
+    flex: 100%;
+}
+
+.gh3-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1d2327;
+}
+
+.gh3-field input[type="text"],
+.gh3-field input[type="url"],
+.gh3-field input[type="date"],
+.gh3-field input[type="number"],
+.gh3-field textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+.gh3-field input[type="number"].small-text {
+    width: 100px;
+}
+
+.gh3-field .description {
+    color: #646970;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 782px) {
+    .gh3-field-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .gh3-field {
+        min-width: 100%;
+    }
+}

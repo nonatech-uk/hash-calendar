@@ -62,6 +62,7 @@ class GH3_Admin {
         $new_columns = array();
         $new_columns['cb'] = $columns['cb'];
         $new_columns['run_date'] = __('Date', 'gh3-hash-runs');
+        $new_columns['run_number'] = __('Run #', 'gh3-hash-runs');
         $new_columns['title'] = $columns['title'];
         $new_columns['hares'] = __('Hare(s)', 'gh3-hash-runs');
         $new_columns['location'] = __('Location', 'gh3-hash-runs');
@@ -81,6 +82,10 @@ class GH3_Admin {
                     echo '—';
                 }
                 break;
+            case 'run_number':
+                $run_number = get_post_meta($post_id, '_gh3_run_number', true);
+                echo $run_number ? esc_html($run_number) : '—';
+                break;
             case 'hares':
                 $hares = get_post_meta($post_id, '_gh3_hares', true);
                 echo $hares ? esc_html($hares) : '—';
@@ -97,6 +102,7 @@ class GH3_Admin {
      */
     public function set_sortable_columns($columns) {
         $columns['run_date'] = 'run_date';
+        $columns['run_number'] = 'run_number';
         $columns['hares'] = 'hares';
         $columns['location'] = 'location';
         return $columns;
@@ -124,6 +130,9 @@ class GH3_Admin {
             if (empty($query->get('order'))) {
                 $query->set('order', 'ASC');
             }
+        } elseif ($orderby === 'run_number') {
+            $query->set('meta_key', '_gh3_run_number');
+            $query->set('orderby', 'meta_value_num');
         } elseif ($orderby === 'hares') {
             $query->set('meta_key', '_gh3_hares');
             $query->set('orderby', 'meta_value');

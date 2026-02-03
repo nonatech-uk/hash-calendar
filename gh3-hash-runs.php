@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: GH3 Hash Runs
- * Plugin URI: https://guildfordh3.org.uk
+ * Plugin URI: https://github.com/nonatech-uk/hash-calendar
  * Description: Custom Hash House Harriers run management for Guildford H3
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Guildford Hash House Harriers
  * License: Non-Commercial Use License
  * GitHub Plugin URI: nonatech-uk/hash-calendar
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define plugin constants
-define('GH3_HASH_RUNS_VERSION', '1.0.0');
+define('GH3_HASH_RUNS_VERSION', '1.0.1');
 define('GH3_HASH_RUNS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('GH3_HASH_RUNS_PLUGIN_URL', plugin_dir_url(__FILE__));
 
